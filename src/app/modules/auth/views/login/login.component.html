@@ -1,1 +1,39 @@
-<p>login works!</p>
+<div class="container-login" *ngIf="jsonConfig">
+  <mat-card>
+    <mat-card-content>
+      <div class="header-login">
+        <img
+          src="https://olsoftware.com/wp-content/uploads/2021/04/cropped-Logo-Oficial-OL-Software.png"
+          alt="cropped-Logo-Oficial-OL-Software"
+        />
+        <span class="text-title">{{ jsonConfig.titleLogin }}</span>
+        <span class="text-subtitle">{{ jsonConfig.subtitleLogin }}</span>
+      </div>
+
+      <form [formGroup]="formLogin" (ngSubmit)="submitlogin()">
+        <div class="form-login">
+          <mat-form-field>
+            <mat-label>{{ jsonConfig.userLabeLogin }}</mat-label>
+            <input type="text" matInput formControlName="username" />
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>{{ jsonConfig.passLabelLogin }}</mat-label>
+            <input type="password" matInput formControlName="password" />
+          </mat-form-field>
+
+          <button mat-raised-button color="primary" type="submit">
+            {{ jsonConfig.btnLogin }}
+          </button>
+        </div>
+      </form>
+
+      <div class="info-login">
+        <mat-checkbox [(ngModel)]="checked">
+          {{ jsonConfig.labelRemenber }}
+        </mat-checkbox>
+        <button mat-button>{{ jsonConfig.linkResetPass }}</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

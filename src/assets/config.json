@@ -1,0 +1,9 @@
+{
+  "titleLogin": "Bienvenido al gestor de proyectos!",
+  "subtitleLogin": "Necesitamos tu usuario y contraseña",
+  "userLabeLogin": "Nombre de usuario Ej: nombre.apellido",
+  "passLabelLogin": "Aquí va tu contraseña",
+  "btnLogin": "Ingresar",
+  "labelRemenber": "Permanecer conectado",
+  "linkResetPass": "Recuperar contraseña"
+}
