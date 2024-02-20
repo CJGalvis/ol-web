@@ -1,0 +1,49 @@
+<div class="container-cards">
+  <div class="flex-column">
+    <div class="flex-row">
+      <mat-card style="background-color: #5f9ea0">
+        <mat-card-content>
+          <div class="content-card">
+            <span class="text-card">{{ jsonConfig?.projectsTitle1 }}</span>
+            <span class="text-card-value">{{ cardsInfo?.projects }}</span>
+            <span class="text-card">
+              Último proyecto registrado hace 15 días
+            </span>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card style="background-color: #a05f8f">
+        <mat-card-content>
+          <div class="content-card">
+            <span class="text-card">{{ jsonConfig?.projectsTitle2 }}</span>
+            <span class="text-card-value">{{ cardsInfo?.projects_dev }}</span>
+            <span class="text-card">Total de avance 22%</span>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div class="flex-row">
+      <mat-card style="background-color: #a07b5f">
+        <mat-card-content>
+          <div class="content-card">
+            <span class="text-card">{{ jsonConfig?.projectsTitle3 }}</span>
+            <span class="text-card-value">{{ cardsInfo?.peding_nc }}</span>
+            <span class="text-card">Última NC registrada</span>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card style="background-color: #5fa071">
+        <mat-card-content>
+          <div class="content-card">
+            <span class="text-card">{{ jsonConfig?.projectsTitle4 }}</span>
+            <span class="text-card-value">{{ cardsInfo?.errors_deploy }}</span>
+            <span class="text-card">Último error hace 2 horas</span>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

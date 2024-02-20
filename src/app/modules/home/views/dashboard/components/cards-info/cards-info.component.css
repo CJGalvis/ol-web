@@ -1,0 +1,23 @@
+.content-card {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.flex-row {
+  justify-content: space-between;
+}
+
+mat-card {
+  width: 50%;
+}
+
+.text-card {
+  font-size: 13px;
+  color: white;
+}
+
+.text-card-value {
+  font-size: 22px;
+  color: white;
+}

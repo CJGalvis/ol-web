@@ -5,5 +5,17 @@
   "passLabelLogin": "Aquí va tu contraseña",
   "btnLogin": "Ingresar",
   "labelRemenber": "Permanecer conectado",
-  "linkResetPass": "Recuperar contraseña"
+  "linkResetPass": "Recuperar contraseña",
+  "msgLoginFailed": "Usuario o contraseña incorrectos",
+  "msgServiceFailed": "El servicio no está disponible en este momento",
+  "wellcomeDash": "Bienvenido ",
+  "infoNotifications": "Verifica tus alertas, posees",
+  "alertsUnread": "alertas sin leer",
+  "projectsTitle1": "Proyectos Registrados",
+  "projectsTitle2": "Proyectos en Desarrollo",
+  "projectsTitle3": "NC's sin resolver",
+  "projectsTitle4": "Cantidad de Errores",
+  "clouds": "./assets/cloud.png",
+  "sun": "./assets/sun.png",
+  "rainy": "./assets/rainy.png"
 }

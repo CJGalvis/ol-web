@@ -12,6 +12,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatMenuModule } from '@angular/material/menu';
 
 const MATERIAL_COMPONENTS = [
   LayoutModule,
@@ -24,6 +27,9 @@ const MATERIAL_COMPONENTS = [
   MatFormFieldModule,
   MatInputModule,
   MatCheckboxModule,
+  MatSnackBarModule,
+  MatTooltipModule,
+  MatMenuModule,
 ];
 
 @NgModule({

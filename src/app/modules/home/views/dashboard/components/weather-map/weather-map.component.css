@@ -1,0 +1,29 @@
+img {
+  border-radius: 10px;
+}
+
+.content-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.city {
+  display: flex;
+}
+.container-weather {
+  position: relative;
+}
+
+.floating-data {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 18px;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+}

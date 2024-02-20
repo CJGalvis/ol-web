@@ -1,0 +1,27 @@
+.container-header-dash {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  justify-content: space-between;
+}
+
+.text-wellcome-color {
+  color: #3f51b5;
+}
+
+.text-wellcome-user {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.noti-details {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.noti-time {
+  font-size: 12px;
+  font-weight: 300;
+}

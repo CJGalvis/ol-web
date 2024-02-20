@@ -1,0 +1,10 @@
+<div class="container-weather">
+  <div class="floating-data" *ngIf="temp">
+    <div class="flex-row">
+      <img class="icon" [src]="iconWeather" alt="sun" />
+      <span>{{ temp }} °</span>
+      <span>{{ city }}</span>
+    </div>
+  </div>
+  <img src="./assets/people.svg" alt="people" />
+</div>

@@ -37,3 +37,19 @@ body {
 .fadeIn {
   animation-name: fadeIn;
 }
+
+.container {
+  padding: 15px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}

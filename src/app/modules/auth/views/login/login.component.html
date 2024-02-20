@@ -1,4 +1,4 @@
-<div class="container-login" *ngIf="jsonConfig">
+<div class="container-login animated fadeIn" *ngIf="jsonConfig">
   <mat-card>
     <mat-card-content>
       <div class="header-login">
@@ -14,7 +14,7 @@
         <div class="form-login">
           <mat-form-field>
             <mat-label>{{ jsonConfig.userLabeLogin }}</mat-label>
-            <input type="text" matInput formControlName="username" />
+            <input type="text" matInput formControlName="user" />
           </mat-form-field>
 
           <mat-form-field>
@@ -22,7 +22,12 @@
             <input type="password" matInput formControlName="password" />
           </mat-form-field>
 
-          <button mat-raised-button color="primary" type="submit">
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="formLogin.invalid"
+          >
             {{ jsonConfig.btnLogin }}
           </button>
         </div>

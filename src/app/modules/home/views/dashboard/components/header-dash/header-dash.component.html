@@ -1,0 +1,47 @@
+<div class="flex-row">
+  <div class="container-header-dash" *ngIf="jsonConfig">
+    <span class="text-wellcome-user">
+      {{ jsonConfig.wellcomeDash }} {{ user?.name }}
+    </span>
+
+    <div>
+      <span>
+        {{ jsonConfig.infoNotifications }}
+      </span>
+
+      <span class="text-wellcome-color">
+        {{ notifications.length }} {{ jsonConfig.alertsUnread }}
+      </span>
+    </div>
+  </div>
+
+  <div>
+    <button
+      mat-icon-button
+      matTooltip="Notificaciones"
+      [matMenuTriggerFor]="menu"
+    >
+      <mat-icon>notification_important</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item *ngFor="let item of notifications">
+        <div class="flex-row">
+          <mat-icon>{{ item.type }}</mat-icon>
+          <div>
+            <span class="noti-details"> {{ item.details }}</span>
+            <span class="noti-time"> {{ item.time | time }}</span>
+          </div>
+        </div>
+      </button>
+    </mat-menu>
+
+    <button mat-icon-button matTooltip="Perfil">
+      <mat-icon>person_pin</mat-icon>
+    </button>
+
+    <button mat-icon-button matTooltip="Logout">
+      <mat-icon>more_horiz</mat-icon>
+    </button>
+  </div>
+</div>
