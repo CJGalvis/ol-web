@@ -1,12 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { URL_CONFIG } from 'src/app/core/const';
 
 @Injectable({
   providedIn: 'root',
 })
 export class GlobalService {
+  public loadingBehavior = new BehaviorSubject<boolean>(false);
+
   constructor(private http: HttpClient) {}
 
   /**

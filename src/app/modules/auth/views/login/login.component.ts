@@ -28,9 +28,11 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   getJsonConfig() {
+    this.globalService.loadingBehavior.next(true);
     this.subscriptios.add(
       this.globalService.getConfigurationJson().subscribe((value: any) => {
         this.jsonConfig = value;
+        this.globalService.loadingBehavior.next(false);
       })
     );
   }

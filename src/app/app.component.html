@@ -1,1 +1,7 @@
 <router-outlet></router-outlet>
+<ngx-loading
+  class="animated fadeIn fast"
+  [show]="(loading$ | async) || false"
+  [config]="{ backdropBorderRadius: '3px', fullScreenBackdrop: true }"
+>
+</ngx-loading>
