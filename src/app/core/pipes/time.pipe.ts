@@ -8,7 +8,26 @@ export class TimePipe implements PipeTransform {
     if (!value) {
       return 'Hace mucho tiempo';
     }
-    let time = (Date.now() - new Date(value).getTime()) / 1000;
+
+    let valueSplit = value.split(' ');
+    let dateItem = valueSplit[0];
+    let hourItem = valueSplit[1];
+
+    let date = dateItem.split('/');
+    let hour = hourItem.split(':');
+
+    const newDate = new Date(
+      Date.UTC(
+        Number(date[2]),
+        Number(date[1]),
+        Number(date[0]),
+        Number(hour[0]),
+        Number(hour[1]),
+        Number(hour[2])
+      )
+    ).getTime();
+
+    let time = (Date.now() - newDate) / 1000;
     if (time < 10) {
       return 'Justo ahora';
     } else if (time < 60) {

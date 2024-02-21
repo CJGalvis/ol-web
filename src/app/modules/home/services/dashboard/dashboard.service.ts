@@ -9,8 +9,9 @@ export class DashboardService {
   private urlUsers = '/users';
   private urlNotifications = '/notification';
   private urlCards = '/dashboard_cards';
-  private urlServerDetails = '/report_commits';
+  private urlServerDetails = '/cpu_report';
   private urlReportCommits = '/report_commits';
+  private urlTodos = '/todos';
 
   constructor(private http: HttpClient) {}
 
@@ -32,6 +33,10 @@ export class DashboardService {
 
   getReportCommits() {
     return this.http.get(`${environment.URL_API}${this.urlReportCommits}`);
+  }
+
+  getTodos() {
+    return this.http.get(`${environment.URL_API}${this.urlTodos}`);
   }
 
   getWeatherMap(lat: number, lon: number) {

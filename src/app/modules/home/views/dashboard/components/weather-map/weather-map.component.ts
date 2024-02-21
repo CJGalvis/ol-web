@@ -20,6 +20,10 @@ export class WeatherMapComponent implements OnInit {
     this.getWeather();
   }
 
+  /**
+   * Método que me permite solicitar el acceso a la ubicación
+   * del navegador y poder soncultar el estado del clima
+   */
   getWeather() {
     navigator.geolocation.getCurrentPosition((position) => {
       const latitude = position.coords.latitude;
@@ -28,7 +32,6 @@ export class WeatherMapComponent implements OnInit {
         this.dashboard
           .getWeatherMap(latitude, longitude)
           .subscribe((data: any) => {
-            console.log(data);
             this.temp = data.main.temp;
             this.city = data.name;
             this.main = data.weather[0].main;

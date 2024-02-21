@@ -15,6 +15,9 @@ import { CardsInfoComponent } from './views/dashboard/components/cards-info/card
 import { ServerDetailsComponent } from './views/dashboard/components/server-details/server-details.component';
 import { ReportCommitsComponent } from './views/dashboard/components/report-commits/report-commits.component';
 import { TimePipe } from 'src/app/core/pipes/time.pipe';
+import { NotificationsComponent } from './views/dashboard/components/notifications/notifications.component';
+import { TodosComponent } from './views/dashboard/components/todos/todos.component';
+import { ProfileComponent } from './views/dashboard/components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +32,9 @@ import { TimePipe } from 'src/app/core/pipes/time.pipe';
     ServerDetailsComponent,
     ReportCommitsComponent,
     TimePipe,
+    NotificationsComponent,
+    TodosComponent,
+    ProfileComponent,
   ],
   imports: [CommonModule, HomeRoutingModule, SharedModule],
 })

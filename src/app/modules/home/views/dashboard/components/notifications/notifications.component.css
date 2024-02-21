@@ -1,0 +1,18 @@
+.icon-noti {
+  width: 50px;
+  margin: 0 !important;
+}
+
+.noti-details {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.noti-time {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.row {
+  align-items: center;
+}

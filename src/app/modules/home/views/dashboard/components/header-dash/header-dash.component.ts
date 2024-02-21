@@ -1,5 +1,4 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { DashboardService } from 'src/app/modules/home/services/dashboard/dashboard.service';
 import { GlobalService } from 'src/app/modules/shared/services/global/global.service';
@@ -13,10 +12,10 @@ export class HeaderDashComponent implements OnInit, OnDestroy {
   @Input() jsonConfig: any;
   public user: any;
   public notifications: Array<any> = [];
+  public todos: Array<any> = [];
   private subscriptions: Subscription = new Subscription();
 
   constructor(
-    private router: Router,
     private globalService: GlobalService,
     private dashboardService: DashboardService
   ) {}
@@ -28,8 +27,12 @@ export class HeaderDashComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.getDataUser();
     this.getNotifications();
+    this.getTodos();
   }
 
+  /**
+   * Método que nos permite consultar los datos de los usuarios
+   */
   getDataUser() {
     this.subscriptions.add(
       this.dashboardService.getUsers().subscribe((data: any) => {
@@ -39,6 +42,9 @@ export class HeaderDashComponent implements OnInit, OnDestroy {
     );
   }
 
+  /**
+   * Método que nos permite consultar las notificaciones
+   */
   getNotifications() {
     this.subscriptions.add(
       this.dashboardService.getNotifications().subscribe((data: any) => {
@@ -47,6 +53,20 @@ export class HeaderDashComponent implements OnInit, OnDestroy {
     );
   }
 
+  /**
+   * Método que nos permite consultar las tareas pendientes
+   */
+  getTodos() {
+    this.subscriptions.add(
+      this.dashboardService.getTodos().subscribe((data: any) => {
+        this.todos = data;
+      })
+    );
+  }
+
+  /**
+   * Método que nos permite filtrar la información del usuario actual
+   */
   getUserById(id: number, values: Array<any>) {
     const index = values.findIndex((data) => data.id == id);
     if (index != -1) {
@@ -54,10 +74,5 @@ export class HeaderDashComponent implements OnInit, OnDestroy {
     } else {
       return null;
     }
-  }
-
-  logout() {
-    this.globalService.clear('auth');
-    this.router.navigate(['/auth']);
   }
 }

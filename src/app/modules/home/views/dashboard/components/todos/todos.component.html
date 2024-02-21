@@ -1,0 +1,17 @@
+<button mat-icon-button matTooltip="Pendientes" [matMenuTriggerFor]="menuTodos">
+  <mat-icon>more_horiz</mat-icon>
+</button>
+
+<mat-menu #menuTodos="matMenu">
+  <button mat-menu-item *ngFor="let item of todos; let i = index">
+    <div class="row">
+      <mat-checkbox class="example-margin" [(ngModel)]="item.check">
+        {{ item.description }}
+      </mat-checkbox>
+
+      <button mat-button (click)="removeTodo(i)">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  </button>
+</mat-menu>

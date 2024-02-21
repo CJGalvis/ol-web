@@ -1,0 +1,10 @@
+<button mat-icon-button matTooltip="Perfil" [matMenuTriggerFor]="menuProfile">
+  <mat-icon>person_pin</mat-icon>
+</button>
+
+<mat-menu #menuProfile="matMenu">
+  <button mat-menu-item (click)="logout()">
+    Salir
+    <mat-icon>exit_to_app</mat-icon>
+  </button>
+</mat-menu>

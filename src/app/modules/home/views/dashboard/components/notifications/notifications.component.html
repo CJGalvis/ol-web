@@ -1,0 +1,15 @@
+<button mat-icon-button matTooltip="Notificaciones" [matMenuTriggerFor]="menu">
+  <mat-icon>notification_important</mat-icon>
+</button>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item *ngFor="let item of notifications">
+    <div class="row">
+      <mat-icon class="icon-noti">{{ item.type }}</mat-icon>
+      <div class="column">
+        <span class="noti-details"> {{ item.details }}</span>
+        <span class="noti-time"> {{ item.time | time }}</span>
+      </div>
+    </div>
+  </button>
+</mat-menu>
