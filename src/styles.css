@@ -63,3 +63,19 @@ body {
   display: flex;
   flex-direction: row;
 }
+
+.color-warn {
+  color: chocolate;
+}
+
+.color-error {
+  color: brown;
+}
+
+.color-success {
+  color: green;
+}
+
+.color-process {
+  color: cadetblue;
+}

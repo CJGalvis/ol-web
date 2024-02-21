@@ -15,6 +15,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatTableModule } from '@angular/material/table';
 
 const MATERIAL_COMPONENTS = [
   LayoutModule,
@@ -30,6 +31,7 @@ const MATERIAL_COMPONENTS = [
   MatSnackBarModule,
   MatTooltipModule,
   MatMenuModule,
+  MatTableModule,
 ];
 
 @NgModule({

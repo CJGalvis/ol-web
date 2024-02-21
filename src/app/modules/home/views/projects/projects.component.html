@@ -1,1 +1,116 @@
-<p>projects works!</p>
+<div class="container">
+  <div class="flex-column">
+    <div class="flex-row">
+      <span class="example-spacer"></span>
+      <button mat-raised-button color="primary">Nuevo proyecto</button>
+    </div>
+    <section class="example-container mat-elevation-z8" tabindex="0">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="project_name">
+          <th mat-header-cell *matHeaderCellDef>Proyecto</th>
+          <td mat-cell *matCellDef="let element">{{ element.project_name }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="client">
+          <th mat-header-cell *matHeaderCellDef>Cliente</th>
+          <td mat-cell *matCellDef="let element">{{ element.client }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="repo_url">
+          <th mat-header-cell *matHeaderCellDef>Repositorio</th>
+          <td mat-cell *matCellDef="let element">{{ element.repo_url }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="developers">
+          <th mat-header-cell *matHeaderCellDef>Desarrolladores</th>
+          <td mat-cell *matCellDef="let element">{{ element.developers }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="ci">
+          <th mat-header-cell *matHeaderCellDef>CI</th>
+          <td mat-cell *matCellDef="let element">
+            <mat-icon *ngIf="element.ci; else elseBlockci">
+              check_circle_outline
+            </mat-icon>
+
+            <ng-template #elseBlockci>
+              <mat-icon>donut_large</mat-icon>
+            </ng-template>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="cd">
+          <th mat-header-cell *matHeaderCellDef>CD</th>
+          <td mat-cell *matCellDef="let element">
+            <mat-icon *ngIf="element.cd; else elseBlockcd">
+              check_circle_outline
+            </mat-icon>
+            <ng-template #elseBlockcd>
+              <mat-icon>donut_large</mat-icon>
+            </ng-template>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="frontend_tecnology">
+          <th mat-header-cell *matHeaderCellDef>Frontend</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.frontend_tecnology }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="backend_tecnology">
+          <th mat-header-cell *matHeaderCellDef>Backend</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.backend_tecnology }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="warning_count">
+          <th mat-header-cell *matHeaderCellDef>Alertas</th>
+          <td mat-cell *matCellDef="let element">
+            <span class="color-warn"> {{ element.warning_count }}</span>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="errors_count">
+          <th mat-header-cell *matHeaderCellDef>Errores</th>
+          <td mat-cell *matCellDef="let element">
+            <span class="color-error">{{ element.errors_count }}</span>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="deploy_count">
+          <th mat-header-cell *matHeaderCellDef>Cant. Despliegues</th>
+          <td mat-cell *matCellDef="let element">
+            <span class="color-process">{{ element.deploy_count }}</span>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="percentage_completion">
+          <th mat-header-cell *matHeaderCellDef>Avance</th>
+          <td mat-cell *matCellDef="let element">
+            <span class="color-success">
+              {{ element.percentage_completion }}%
+            </span>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="report_nc">
+          <th mat-header-cell *matHeaderCellDef>Reporte NC's</th>
+          <td mat-cell *matCellDef="let element">{{ element.report_nc }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef>Status</th>
+          <td mat-cell *matCellDef="let element">{{ element.status }}</td>
+        </ng-container>
+
+        <tr
+          mat-header-row
+          *matHeaderRowDef="displayedColumns; sticky: true"
+        ></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </section>
+  </div>
+</div>
